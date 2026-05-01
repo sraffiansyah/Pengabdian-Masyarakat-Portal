@@ -3072,5 +3072,200 @@ input {
     180deg,
     var(--dark) 0%,
     #252030 100%
-  ) !important;
-}
+    ) !important;
+  }
+  
+  
+  /* ============================================= */
+  /* KHUSUS CURSOR                                 */
+  /* ============================================= */
+
+  /* Hide cursor on touch devices */
+  @media (hover: none) {
+    body {
+      cursor: auto !important;
+    }
+    .cursor-dot,
+    .cursor-ring {
+      display: none !important;
+    }
+  }
+
+  /* ===== CUSTOM CURSOR ===== */
+  /* Outer ring (trail) */
+  .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--cursor-color, rgba(255, 255, 255, 0.8));
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, border-color 0.3s, opacity 0.3s;
+    opacity: 0.8;
+    mix-blend-mode: difference;
+  }
+
+  /* Inner dot (main cursor) */
+  .cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background: var(--cursor-color, #fff);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background 0.2s;
+  }
+
+  /* Hover effect on interactive elements */
+  body.hovering .cursor-ring {
+    width: 60px;
+    height: 60px;
+    border-color: var(--cursor-hover-color, var(--primary, #948979));
+    opacity: 1;
+    background: rgba(148, 137, 121, 0.1);
+  }
+
+  body.hovering .cursor-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--cursor-hover-color, var(--primary, #948979));
+  }
+
+  /* Click effect */
+  body.clicking .cursor-ring {
+    width: 30px;
+    height: 30px;
+    border-width: 3px;
+    opacity: 1;
+  }
+
+  body.clicking .cursor-dot {
+    width: 4px;
+    height: 4px;
+    opacity: 0.5;
+  }
+
+  /* Trail particles */
+  .cursor-trail {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--cursor-color, rgba(255, 255, 255, 0.6));
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    animation: trail-fade 0.6s ease-out forwards;
+  }
+
+  @keyframes trail-fade {
+    0% {
+      opacity: 0.8;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.3);
+    }
+  }
+
+  /* ===== DEMO CONTENT ===== */
+  .demo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .demo-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .demo-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
+
+  /* Interactive elements for demo */
+  .demo-btn {
+    padding: 1rem 2.5rem;
+    background: var(--primary, #948979);
+    color: #1a1a2e;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: none; /* Important! */
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .demo-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(148, 137, 121, 0.4);
+  }
+
+  .demo-link {
+    color: var(--primary, #948979);
+    text-decoration: none;
+    font-weight: 500;
+    cursor: none; /* Important! */
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .demo-link:hover {
+    border-bottom-color: var(--primary, #948979);
+  }
+
+  .demo-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 400px;
+    text-align: center;
+    cursor: none; /* Important! */
+    transition: transform 0.3s, border-color 0.3s;
+  }
+
+  .demo-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary, #948979);
+  }
+
+  .demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 900px;
+  }
+
+  /* Helper text */
+  .cursor-hint {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.875rem;
+    pointer-events: none;
+    z-index: 9997;
+  }
