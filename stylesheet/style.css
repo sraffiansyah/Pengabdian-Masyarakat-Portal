@@ -7,7 +7,7 @@
   --secondary: #393E46;
   --tertiary: #DFD0B8;
   --dark: #222831;
-
+ 
   /* Derived colors */
   --primary-light: #b0a798;
   --primary-dark: #7a6f5f;
@@ -19,12 +19,12 @@
   --white-30: rgba(255, 255, 255, 0.3);
   --white-10: rgba(255, 255, 255, 0.1);
   --white-05: rgba(255, 255, 255, 0.05);
-
+ 
   /* Glassmorphism */
   --glass-bg: rgba(34, 40, 49, 0.75);
   --glass-bgg: rgba(34, 40, 49, 0.901);
   --glass-border: rgba(255, 255, 255, 0.08);
-
+ 
   /* Typography */
   --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-size-xs: 0.75rem;
@@ -36,7 +36,7 @@
   --font-size-3xl: 2rem;
   --font-size-4xl: 2.5rem;
   --font-size-5xl: 3.5rem;
-
+ 
   /* Spacing */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
@@ -46,27 +46,27 @@
   --spacing-2xl: 3rem;
   --spacing-3xl: 4rem;
   --spacing-4xl: 6rem;
-
+ 
   /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-base: 0.3s ease;
   --transition-slow: 0.5s ease;
   --transition-slower: 0.8s ease;
-
+ 
   /* Border Radius — tetap px untuk border-radius */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
   --radius-xl: 24px;
   --radius-full: 9999px;
-
+ 
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
   --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.2);
   --shadow-glow: 0 0 20px rgba(148, 137, 121, 0.3);
 }
-
+ 
 /* ============================================= */
 /* 2. CSS RESET & BASE STYLES                   */
 /* ============================================= */
@@ -77,12 +77,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+ 
 html {
   scroll-behavior: smooth;
   font-size: 16px;
 }
-
+ 
 body {
   font-family: var(--font-family);
   background-color: var(--dark);
@@ -92,40 +92,40 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+ 
 a {
   text-decoration: none;
   color: inherit;
 }
-
+ 
 ul,
 ol {
   list-style: none;
 }
-
+ 
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
-
+ 
 button {
   border: none;
   background: none;
   cursor: pointer;
   font-family: inherit;
 }
-
+ 
 input {
   border: none;
   outline: none;
   font-family: inherit;
 }
-
+ 
 /* ============================================= */
 /* 3. NAVBAR STYLES (BEM)                       */
 /* ============================================= */
-
+ 
 /* ---- Navbar Container ---- */
 .navbar {
   position: fixed;
@@ -136,7 +136,7 @@ input {
   padding: 1rem 0;
   transition: padding var(--transition-slow);
 }
-
+ 
 /* ---- Navbar Inner (the actual glass bar) ---- */
 .navbar__inner {
   max-width: 85rem;
@@ -150,13 +150,13 @@ input {
   transition: all var(--transition-slow);
   border-radius: var(--radius-full);
 }
-
+ 
 /* Glassmorphism effect on scroll — capsule shape */
 .navbar--scrolled {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-
+ 
 .navbar--scrolled .navbar__inner {
   background: var(--glass-bg);
   backdrop-filter: blur(1.25rem) saturate(180%);
@@ -169,7 +169,7 @@ input {
   height: 3.5rem;
   padding: 0 1rem;
 }
-
+ 
 /* ============================================= */
 /* ---- LOGO (Image + Text side by side)        */
 /* ============================================= */
@@ -180,7 +180,7 @@ input {
   gap: 0.625rem;
   transition: opacity var(--transition-base);
 }
-
+ 
 /* Logo image — circular crop */
 .navbar__logo-image {
   width: 2.25rem;
@@ -191,19 +191,19 @@ input {
   transition: transform var(--transition-base), box-shadow var(--transition-base);
   flex-shrink: 0;
 }
-
+ 
 /* Shrink logo slightly when navbar is scrolled */
 .navbar--scrolled .navbar__logo-image {
   width: 1.75rem;
   height: 1.75rem;
 }
-
+ 
 /* Hover: subtle pop */
 .navbar__logo-image:hover {
   transform: scale(1.08);
   box-shadow: var(--shadow-lg), 0 0 1.875rem rgba(148, 137, 121, 0.25);
 }
-
+ 
 /* Logo text link */
 .navbar__logo-link {
   font-size: var(--font-size-xl);
@@ -214,11 +214,11 @@ input {
   position: relative;
   white-space: nowrap;
 }
-
+ 
 .navbar__logo-link:hover {
   color: var(--primary-light);
 }
-
+ 
 /* Decorative underline on hover */
 .navbar__logo-link::after {
   content: '';
@@ -230,29 +230,29 @@ input {
   background: var(--primary);
   transition: var(--transition-base);
 }
-
+ 
 .navbar__logo-link:hover::after {
   width: 100%;
 }
-
+ 
 /* ---- Navigation Menu ---- */
 .navbar__menu {
   flex: 1;
   display: flex;
   justify-content: center;
 }
-
+ 
 .navbar__list {
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
 }
-
+ 
 .navbar__item {
   position: relative;
   cursor: pointer;
 }
-
+ 
 .navbar__link {
   display: flex;
   align-items: center;
@@ -266,28 +266,28 @@ input {
   white-space: nowrap;
   text-decoration: none;
 }
-
+ 
 .navbar__link:hover {
   color: var(--primary);
   background: var(--white-05);
   transform: scale(1.03);
 }
-
+ 
 .navbar__link--active {
   color: var(--primary);
   background: var(--white-10);
 }
-
+ 
 .navbar__dropdown-icon {
   display: inline-flex;
   transition: transform var(--transition-base);
 }
-
+ 
 /* ---- Dropdown Icon Active (for click toggle) ---- */
 .navbar__dropdown-icon--active {
   transform: rotate(180deg);
 }
-
+ 
 /* ============================================= */
 /* ---- DROPDOWN PANEL                          */
 /* ============================================= */
@@ -314,7 +314,7 @@ input {
   backface-visibility: hidden;
   perspective: 1000px;
 }
-
+ 
 /* Arrow dekorasi */
 .navbar__dropdown::before {
   content: '';
@@ -329,7 +329,7 @@ input {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
-
+ 
 /* Invisible bridge */
 .navbar__dropdown::after {
   content: '';
@@ -342,7 +342,7 @@ input {
   border: none;
   outline: none;
 }
-
+ 
 /* Hover state — dropdown muncul */
 .navbar__item--dropdown:hover .navbar__dropdown {
   opacity: 1;
@@ -351,7 +351,7 @@ input {
   transform: translateX(-50%) translateY(0);
   transition-delay: 0s;
 }
-
+ 
 /* Dropdown list */
 .navbar__dropdown-list {
   display: flex;
@@ -360,14 +360,14 @@ input {
   margin: 0;
   padding: 0;
 }
-
+ 
 .navbar__dropdown-item {
   border-radius: var(--radius-md);
   margin: 0;
   border: none;
   outline: none;
 }
-
+ 
 .navbar__dropdown-link {
   display: block;
   padding: var(--spacing-sm) var(--spacing-md);
@@ -382,7 +382,7 @@ input {
   -webkit-user-select: none;
   user-select: none;
 }
-
+ 
 .navbar__dropdown-link:hover {
   color: var(--primary);
   background: var(--white-05);
@@ -390,7 +390,7 @@ input {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
-
+ 
 /* ---- Right Spacer (placeholder for future feature) ---- */
 .navbar__spacer {
   flex-shrink: 0;
@@ -398,11 +398,11 @@ input {
   height: 100%;
   pointer-events: none;
 }
-
+ 
 .navbar--scrolled .navbar__spacer {
   width: 10rem;
 }
-
+ 
 /* ---- Hamburger Menu ---- */
 .navbar__hamburger {
   display: none;
@@ -411,7 +411,7 @@ input {
   padding: var(--spacing-sm);
   z-index: 1001;
 }
-
+ 
 .navbar__hamburger-line {
   width: 1.5rem;
   height: 2px;
@@ -419,20 +419,20 @@ input {
   border-radius: 2px;
   transition: var(--transition-base);
 }
-
+ 
 /* Hamburger animation when active */
 .navbar__hamburger--active .navbar__hamburger-line:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-
+ 
 .navbar__hamburger--active .navbar__hamburger-line:nth-child(2) {
   opacity: 0;
 }
-
+ 
 .navbar__hamburger--active .navbar__hamburger-line:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
-
+ 
 /* ---- Mobile Menu Overlay ---- */
 .navbar__mobile-overlay {
   position: fixed;
@@ -449,12 +449,12 @@ input {
   transition: opacity var(--transition-base), visibility var(--transition-base);
   overflow-y: auto;
 }
-
+ 
 .navbar__mobile-overlay--visible {
   opacity: 1;
   visibility: visible;
 }
-
+ 
 .navbar__mobile-menu {
   display: flex;
   flex-direction: column;
@@ -463,7 +463,7 @@ input {
   min-height: 100%;
   padding: 5rem 2rem 2rem;
 }
-
+ 
 .navbar__mobile-list {
   display: flex;
   flex-direction: column;
@@ -471,13 +471,13 @@ input {
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
-
+ 
 .navbar__mobile-item {
   width: 100%;
   max-width: 20rem;
   text-align: center;
 }
-
+ 
 .navbar__mobile-link {
   display: block;
   font-size: 1.25rem;
@@ -487,17 +487,17 @@ input {
   border-radius: var(--radius-full);
   transition: var(--transition-fast);
 }
-
+ 
 .navbar__mobile-link:hover,
 .navbar__mobile-link--active {
   color: var(--primary);
   background: var(--white-05);
 }
-
+ 
 .navbar__mobile-item--dropdown {
   position: relative;
 }
-
+ 
 .navbar__mobile-dropdown-toggle {
   display: flex;
   align-items: center;
@@ -512,29 +512,29 @@ input {
   transition: var(--transition-fast);
   background: transparent;
 }
-
+ 
 .navbar__mobile-dropdown-toggle:hover {
   color: var(--primary);
   background: var(--white-05);
 }
-
+ 
 .navbar__mobile-dropdown {
   max-height: 0;
   overflow: hidden;
   transition: max-height var(--transition-base);
 }
-
+ 
 .navbar__mobile-dropdown--visible {
   max-height: 20rem;
 }
-
+ 
 .navbar__mobile-dropdown-list {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   padding: 1rem 0;
 }
-
+ 
 .navbar__mobile-dropdown-link {
   display: block;
   font-size: 1rem;
@@ -544,16 +544,16 @@ input {
   border-radius: var(--radius-md);
   transition: var(--transition-fast);
 }
-
+ 
 .navbar__mobile-dropdown-link:hover {
   color: var(--primary);
   background: var(--white-05);
 }
-
+ 
 /* ============================================= */
 /* 4. HERO SECTION STYLES (BEM)                 */
 /* ============================================= */
-
+ 
 /* ---- Hero Container ---- */
 .hero {
   position: relative;
@@ -563,14 +563,14 @@ input {
   justify-content: center;
   overflow: hidden;
 }
-
+ 
 /* ---- Hero Background Image ---- */
 .hero__bg {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
-
+ 
 /*
   Desktop: Gambar 3:4 (portrait) di-crop jadi 4:3 (landscape)
   dengan zoom ke bagian bawah. object-position: center bottom
@@ -584,7 +584,7 @@ input {
   display: block;
   transition: transform 0.1s linear;
 }
-
+ 
 /* Dark overlay agar teks tetap terbaca */
 .hero__bg-overlay {
   position: absolute;
@@ -596,7 +596,7 @@ input {
     rgba(34, 40, 49, 0.85) 100%
   );
 }
-
+ 
 /* ---- Floating Shapes (Parallax) ---- */
 .hero__shapes {
   position: absolute;
@@ -605,13 +605,13 @@ input {
   pointer-events: none;
   overflow: hidden;
 }
-
+ 
 .hero__shape {
   position: absolute;
   border-radius: 50%;
   opacity: 0.05;
 }
-
+ 
 .hero__shape--1 {
   width: 18.75rem;
   height: 18.75rem;
@@ -620,7 +620,7 @@ input {
   left: -5%;
   filter: blur(5rem);
 }
-
+ 
 .hero__shape--2 {
   width: 12.5rem;
   height: 12.5rem;
@@ -629,7 +629,7 @@ input {
   right: 10%;
   filter: blur(3.75rem);
 }
-
+ 
 .hero__shape--3 {
   width: 9.375rem;
   height: 9.375rem;
@@ -638,7 +638,7 @@ input {
   left: 20%;
   filter: blur(3.125rem);
 }
-
+ 
 .hero__shape--4 {
   width: 15.625rem;
   height: 15.625rem;
@@ -647,7 +647,7 @@ input {
   right: -3%;
   filter: blur(4.375rem);
 }
-
+ 
 /* ---- Hero Content ---- */
 .hero__content {
   position: relative;
@@ -660,7 +660,7 @@ input {
   max-width: 56.25rem;
   margin-top: 18vh;
 }
-
+ 
 /* ---- Hero Title ---- */
 .hero__title {
   font-weight: 700;
@@ -671,12 +671,12 @@ input {
   transform: translateY(1.875rem);
   transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
 }
-
+ 
 .hero__title--visible {
   opacity: 1;
   transform: translateY(0);
 }
-
+ 
 /* First line: "Pengabdian Masyarakat" — sebaris */
 .hero__title-line {
   display: block;
@@ -685,7 +685,7 @@ input {
   font-weight: 600;
   margin-bottom: 0.25rem;
 }
-
+ 
 /* Second line: "Kelompok 2" — dengan hover effect */
 .hero__title-highlight {
   cursor: pointer;
@@ -697,7 +697,7 @@ input {
   transition: color var(--transition-base), text-shadow var(--transition-base);
   padding-bottom: 4px;
 }
-
+ 
 /* Underline bar yang muncul saat hover */
 .hero__title-highlight::before {
   content: '';
@@ -712,19 +712,19 @@ input {
   opacity: 0.5;
   transition: width var(--transition-base), opacity var(--transition-base);
 }
-
+ 
 /* Hover: underline melebar + glow + color shift */
 .hero__title-highlight:hover {
   color: var(--tertiary);
   text-shadow: 0 0 1.875rem rgba(148, 137, 121, 0.4), 0 0 3.75rem rgba(148, 137, 121, 0.15);
 }
-
+ 
 .hero__title-highlight:hover::before {
   width: 100%;
   opacity: 1;
   background: var(--tertiary);
 }
-
+ 
 /* ---- Hero Subtitle ---- */
 .hero__subtitle {
   font-size: var(--font-size-lg);
@@ -737,12 +737,12 @@ input {
   transform: translateY(1.25rem);
   transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
 }
-
+ 
 .hero__subtitle--visible {
   opacity: 1;
   transform: translateY(0);
 }
-
+ 
 /* ---- Hero Actions (Buttons) ---- */
 .hero__actions {
   display: flex;
@@ -753,12 +753,12 @@ input {
   transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
   margin-top: 5rem;
 }
-
+ 
 .hero__actions--visible {
   opacity: 1;
   transform: translateY(0);
 }
-
+ 
 /* ---- Buttons ---- */
 .btn {
   display: inline-flex;
@@ -774,33 +774,33 @@ input {
   cursor: pointer;
   z-index: 1;
 }
-
+ 
 /* Primary Button */
 .btn--primary {
   background: var(--primary);
   color: var(--dark);
 }
-
+ 
 .btn--primary:hover {
   background: var(--primary-light);
   box-shadow: var(--shadow-glow);
   transform: translateY(-2px);
 }
-
+ 
 /* Secondary Button */
 .btn--secondary {
   background: transparent;
   color: var(--white);
   border: 2px solid var(--white-30);
 }
-
+ 
 .btn--secondary:hover {
   border-color: var(--primary);
   color: var(--primary);
   background: rgba(148, 137, 121, 0.08);
   transform: translateY(-2px);
 }
-
+ 
 /* Shine animation on hover */
 .btn__shine {
   position: absolute;
@@ -817,22 +817,22 @@ input {
   transition: none;
   z-index: -1;
 }
-
+ 
 .btn:hover .btn__shine {
   animation: btn-shine 0.6s ease forwards;
 }
-
+ 
 @keyframes btn-shine {
   0% { left: -100%; }
   100% { left: 100%; }
 }
-
+ 
 /* Magnetic button - JS handles the transform */
 .magnetic-btn {
   transition: transform var(--transition-base), background var(--transition-base), border-color var(--transition-base);
   will-change: transform;
 }
-
+ 
 /* ---- Scroll Indicator ---- */
 .hero__scroll-indicator {
   position: absolute;
@@ -843,11 +843,11 @@ input {
   opacity: 0;
   transition: opacity var(--transition-slow);
 }
-
+ 
 .hero__scroll-indicator--visible {
   opacity: 1;
 }
-
+ 
 .hero__scroll-arrow {
   display: flex;
   align-items: center;
@@ -857,7 +857,7 @@ input {
   color: var(--white-50);
   animation: scroll-bounce 2s ease-in-out infinite;
 }
-
+ 
 @keyframes scroll-bounce {
   0%, 100% {
     transform: translateY(0);
@@ -866,7 +866,7 @@ input {
     transform: translateY(0.625rem);
   }
 }
-
+ 
 /* ============================================= */
 /* 5. PLACEHOLDER SECTIONS                       */
 /* ============================================= */
@@ -877,29 +877,29 @@ input {
   justify-content: center;
   padding: var(--spacing-4xl) var(--spacing-xl);
 }
-
+ 
 .placeholder-section:nth-child(even) {
   background: var(--secondary);
 }
-
+ 
 .placeholder-section__container {
   max-width: 43.75rem;
   text-align: center;
 }
-
+ 
 .placeholder-section__title {
   font-size: var(--font-size-3xl);
   font-weight: 700;
   color: var(--primary);
   margin-bottom: var(--spacing-lg);
 }
-
+ 
 .placeholder-section__text {
   font-size: var(--font-size-base);
   color: var(--white-70);
   line-height: 1.8;
 }
-
+ 
 /* ========================================== */
 /* VIDEO DAN LINK SECTION (BEM + Theme)       */
 /* ========================================== */
@@ -908,24 +908,24 @@ input {
   background: var(--dark);
   min-height: auto;
 }
-
+ 
 .videos-container {
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
 }
-
+ 
 .videos-title {
   font-size: var(--font-size-4xl);
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
   color: var(--white);
 }
-
+ 
 .videos-title span {
   color: var(--primary);
 }
-
+ 
 .videos-desc {
   color: var(--white-70);
   font-size: var(--font-size-lg);
@@ -935,7 +935,7 @@ input {
   margin-right: auto;
   line-height: 1.7;
 }
-
+ 
 /* Thumbnail Wrapper */
 .video-thumbnail-wrapper {
   position: relative;
@@ -949,14 +949,14 @@ input {
   background: var(--secondary);
   aspect-ratio: 16/9;
 }
-
+ 
 .video-thumbnail-wrapper:hover,
 .video-thumbnail-wrapper:focus {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), var(--shadow-glow);
   outline: none;
 }
-
+ 
 .video-thumbnail {
   width: 100%;
   height: 100%;
@@ -964,11 +964,11 @@ input {
   display: block;
   transition: transform var(--transition-slow);
 }
-
+ 
 .video-thumbnail-wrapper:hover .video-thumbnail {
   transform: scale(1.03);
 }
-
+ 
 /* Play Button */
 .video-play-button {
   position: absolute;
@@ -985,19 +985,19 @@ input {
   transition: all var(--transition-base);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
-
+ 
 .video-thumbnail-wrapper:hover .video-play-button {
   transform: translate(-50%, -50%) scale(1.1);
   background: var(--primary);
 }
-
+ 
 .play-icon {
   width: 32px;
   height: 32px;
   color: var(--white);
   margin-left: 2px; /* optical adjustment */
 }
-
+ 
 /* Video Embed */
 .video-embed-wrapper {
   position: relative;
@@ -1010,11 +1010,11 @@ input {
   box-shadow: var(--shadow-lg);
   background: var(--secondary);
 }
-
+ 
 .video-embed-wrapper[hidden] {
   display: none;
 }
-
+ 
 .video-iframe {
   position: absolute;
   top: 0;
@@ -1024,7 +1024,7 @@ input {
   border: 0;
   border-radius: var(--radius-xl);
 }
-
+ 
 /* YouTube Button - Theme Consistent */
 .button-yt {
   display: inline-flex;
@@ -1041,7 +1041,7 @@ input {
   transition: all var(--transition-base);
   cursor: pointer;
 }
-
+ 
 .button-yt:hover,
 .button-yt:focus {
   border-color: var(--primary);
@@ -1051,20 +1051,20 @@ input {
   box-shadow: var(--shadow-glow);
   outline: none;
 }
-
+ 
 .button-yt svg {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
   transition: transform var(--transition-fast);
 }
-
+ 
 .button-yt:hover svg {
   transform: scale(1.1);
 }
-
-
-
+ 
+ 
+ 
 /* ============================================= */
 /* 6. TEAMS SECTION                             */
 /* ============================================= */
@@ -1076,30 +1076,30 @@ input {
   flex-direction: column;
   justify-content: center;
 }
-
+ 
 .teams-container {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
 }
-
+ 
 .teams-title {
   text-align: center;
   font-size: var(--font-size-4xl);
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
 }
-
+ 
 .teams-title span {
   color: var(--primary);
 }
-
+ 
 .teams-desc {
   text-align: center;
   color: var(--white-50);
   margin-bottom: var(--spacing-3xl);
 }
-
+ 
 .team-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1108,7 +1108,7 @@ input {
   max-width: 1100px;
   margin: 0 auto;
 }
-
+ 
 .team-card:nth-child(1) { grid-area: 1 / 2 / 2 / 3; }
 .team-card:nth-child(2) { grid-area: 2 / 1 / 3 / 2; }
 .team-card:nth-child(3) { grid-area: 2 / 2 / 3 / 3; }
@@ -1116,7 +1116,7 @@ input {
 .team-card:nth-child(5) { grid-area: 3 / 1 / 4 / 2; }
 .team-card:nth-child(6) { grid-area: 3 / 2 / 4 / 3; }
 .team-card:nth-child(7) { grid-area: 3 / 3 / 4 / 4; }
-
+ 
 .team-card {
   position: relative;
   border-radius: var(--radius-xl);
@@ -1127,24 +1127,24 @@ input {
   transition: transform var(--transition-slow), box-shadow var(--transition-slow);
   background: var(--secondary);
 }
-
+ 
 .team-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(148, 137, 121, 0.2);
 }
-
+ 
 .team-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s ease, filter 0.6s ease;
 }
-
+ 
 .team-card:hover .team-photo {
   transform: scale(1.1);
   filter: brightness(0.4) blur(2px);
 }
-
+ 
 .team-overlay {
   position: absolute;
   inset: 0;
@@ -1159,12 +1159,12 @@ input {
   background: linear-gradient(to top, rgba(34, 40, 49, 0.95) 0%, rgba(34,40,49,0.4) 60%, transparent 100%);
   gap: 0.5rem;
 }
-
+ 
 .team-card:hover .team-overlay {
   opacity: 1;
   transform: translateY(0);
 }
-
+ 
 .team-info-container {
   display: flex;
   flex-direction: column;
@@ -1174,7 +1174,7 @@ input {
   width: 100%;
   margin: 0;
 }
-
+ 
 .team-name {
   font-size: var(--font-size-xl);
   font-weight: 700;
@@ -1183,11 +1183,11 @@ input {
   transition: transform 0.4s ease 0.05s;
   margin: 0;
 }
-
+ 
 .team-card:hover .team-name {
   transform: translateY(0);
 }
-
+ 
 .team-nim {
   font-size: var(--font-size-sm);
   font-weight: 500;
@@ -1200,11 +1200,11 @@ input {
   transition: transform 0.4s ease 0.1s;
   margin: 0;
 }
-
+ 
 .team-card:hover .team-nim {
   transform: translateY(0);
 }
-
+ 
 /* Instagram Button Wrapper — now in normal flex flow */
 .team-ig-wrapper {
   display: flex;
@@ -1214,7 +1214,7 @@ input {
   transform: translateY(10px);
   transition: opacity 0.4s ease 0.18s, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.18s;
 }
-
+ 
 .team-card:hover .team-ig-wrapper {
   opacity: 1;
   transform: translateY(0);
@@ -1306,12 +1306,12 @@ input {
     opacity: 0;
   }
 }
-
-
+ 
+ 
 /* ============================================= */
 /* 7. ANIMATIONS                                */
 /* ============================================= */
-
+ 
 /* Fade in up */
 @keyframes fadeInUp {
   from {
@@ -1323,7 +1323,7 @@ input {
     transform: translateY(0);
   }
 }
-
+ 
 /* Pulse glow */
 @keyframes pulseGlow {
   0%, 100% {
@@ -1333,21 +1333,21 @@ input {
     box-shadow: 0 0 2.5rem rgba(148, 137, 121, 0.4);
   }
 }
-
+ 
 /* ========================================== */
 /* DOCUMENTATION SECTION                      */
 /* ========================================== */
-
+ 
 .documentation-section {
     padding: 60px 20px;
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
-
+ 
 .documentation-container {
     max-width: 1200px;
     margin: 0 auto;
 }
-
+ 
 .documentation-title {
     font-size: 2.5rem;
     font-weight: 700;
@@ -1355,63 +1355,67 @@ input {
     margin-bottom: 1rem;
     color: var(--primary)
 }
-
+ 
 .documentation-desc {
     text-align: center;
     color: #cbd5e1;
     font-size: 1.1rem;
     margin-bottom: 3rem;
 }
-
+ 
 .documentation-gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
 }
-
+ 
+.mrgn-doc {
+    margin-top: 2rem;
+}
+ 
 .documentation-item {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transition:
-        transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
-        box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1),
-        border-color 0.4s ease;
-    border: 1px solid rgba(148, 137, 121, 0);
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition:
+  transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+  box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+  border-color 0.4s ease;
+  border: 1px solid rgba(148, 137, 121, 0);
 }
-
+ 
 .documentation-item:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow:
-        0 24px 48px -8px rgba(0, 0, 0, 0.5),
-        0 0 0 1.5px rgba(148, 137, 121, 0.45),
-        0 0 28px rgba(148, 137, 121, 0.15);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow:
+  0 24px 48px -8px rgba(0, 0, 0, 0.5),
+  0 0 0 1.5px rgba(148, 137, 121, 0.45),
+  0 0 28px rgba(148, 137, 121, 0.15);
 }
-
+ 
 /* Overlay gelap muncul saat hover */
 .documentation-item::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        180deg,
-        rgba(0,0,0,0) 30%,
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0) 30%,
         rgba(34, 40, 49, 0.85) 100%
     );
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: 1;
 }
-
+ 
 .documentation-item:hover::before {
     opacity: 1;
 }
-
+ 
 /* Label "Lihat Foto" muncul dari bawah */
 .documentation-item::after {
     position: absolute;
@@ -1429,11 +1433,11 @@ input {
     transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: 2;
 }
-
+ 
 .documentation-item:hover::after {
     transform: translateY(0);
 }
-
+ 
 .documentation-img {
     cursor: pointer;
     width: 100%;
@@ -1443,13 +1447,13 @@ input {
     transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
                 filter 0.4s ease;
 }
-
+ 
 .documentation-item:hover .documentation-img {
     transform: scale(1.08);
     filter: brightness(0.8);
 }
-
-
+ 
+ 
 /* ============================================= */
 /* FOOTER                                        */
 /* ============================================= */
@@ -1458,7 +1462,7 @@ input {
   padding: 3rem 0 1.5rem;
   color: var(--white);
 }
-
+ 
 .footer__inner {
   max-width: 1366px;
   margin: 0 auto;
@@ -1469,23 +1473,23 @@ input {
   align-items: start;
   grid-template-areas: "brand pages information contact";
 }
-
+ 
 .footer__brand,
 .footer__column {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-
+ 
 .footer__brand {
   min-width: 220px;
   grid-area: brand;
 }
-
+ 
 .footer__pages { grid-area: pages; }
 .footer__information { grid-area: information; }
 .footer__contact { grid-area: contact; }
-
+ 
 .footer__logo {
   display: inline-flex;
   align-items: center;
@@ -1494,21 +1498,21 @@ input {
   font-size: var(--font-size-xl);
   font-weight: 700;
 }
-
+ 
 .footer__logo-image {
   width: 42px;
   height: 42px;
   object-fit: cover;
   box-shadow: var(--shadow-md);
 }
-
+ 
 .footer__logo-image2 {
   width: 75px;
   height: 45px;
   object-fit: cover;
   box-shadow: var(--shadow-md);
 }
-
+ 
 .footer__brand-title {
   font-size: var(--font-size-sm);
   font-weight: 600;
@@ -1516,28 +1520,28 @@ input {
   letter-spacing: 0.05em;
   color: var(--white-50);
 }
-
+ 
 .footer__text {
   color: var(--white-70);
   line-height: 1.8;
 }
-
+ 
 .footer__column-title {
   font-size: var(--font-size-xl);
   font-weight: 700;
   color: var(--white);
   letter-spacing: 0.02em;
 }
-
+ 
 .footer__link,
 .footer__contact-text {
   color: var(--white-70);
   transition: color var(--transition-fast);
 }
-
+ 
 .footer__link:hover,
 .footer__contact-text:hover, .footer__contact-icon:Hover { color: var(--primary); }
-
+ 
 .footer__contact-item {
   display: flex;
   align-items: flex-start;
@@ -1545,7 +1549,7 @@ input {
   color: var(--white-70);
   line-height: 1.6;
 }
-
+ 
 .footer__contact-icon {
   display: inline-flex;
   align-items: center;
@@ -1557,11 +1561,11 @@ input {
   font-size: 0.95rem;
   color: var(--primary);
 }
-
+ 
 .footer__contact-item a {
   color: var(--white-70);
 }
-
+ 
 .footer__bottom {
   width: 100%;
   margin-top: 2rem;
@@ -1573,24 +1577,24 @@ input {
   font-size: var(--font-size-sm);
   text-align: center;
 }
-
+ 
 .section.landing-footer {
   background: linear-gradient(180deg, rgba(22, 25, 30, 0.99), rgba(16, 18, 22, 1));
   padding: 4rem 0 2rem;
 }
-
+ 
 .landing-footer .container {
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 var(--spacing-xl);
 }
-
+ 
 .row {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 1.5rem;
 }
-
+ 
 .col-xl-4 { grid-column: span 4; }
 .col-xl-2 { grid-column: span 2; }
 .px-4 { padding: 0 1.5rem; }
@@ -1606,7 +1610,7 @@ input {
 .landing-footer-list li:last-child { margin-bottom: 0; }
 .landing-footer-list a { display: inline-flex; align-items: center; gap: 0.5rem; }
 .landing-main-footer { background: rgba(16,18,22,0.9); }
-
+ 
 .footer-icon {
   display: inline-flex;
   align-items: center;
@@ -1618,15 +1622,15 @@ input {
   color: var(--primary);
   font-size: 0.85rem;
 }
-
+ 
 @media (max-width: 992px) {
   .col-xl-4, .col-xl-2 { grid-column: span 12; }
 }
-
+ 
 @media (max-width: 576px) {
   .px-4 { padding: 0 1rem; }
 }
-
+ 
 /* Maps Icon  */
 .maps-icon {
     width: 24px;
@@ -1634,19 +1638,19 @@ input {
     color: var(--primary); /* Atau warna tema Anda */
     flex-shrink: 0;
 }
-
+ 
 .footer__contact-icon {
     width: 24px;
     height: 24px;
     color: var(--primary); /* Atau warna tema Anda */
     flex-shrink: 0;
 }
-
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
+ 
 /* ============================================= */
 /* 8. RESPONSIVE - TABLET (768px)               */
 /* ============================================= */
@@ -1712,22 +1716,22 @@ input {
     width: 12.5rem;
     height: 12.5rem;
   }
-
+ 
   .hero__shape--2 {
     width: 9.375rem;
     height: 9.375rem;
   }
-
+ 
   .hero__shape--3 {
     width: 6.25rem;
     height: 6.25rem;
   }
-
+ 
   .hero__shape--4 {
     width: 10rem;
     height: 10rem;
   }
-
+ 
   /* PROPOSAL */
     .cards-wrapper {
     grid-template-columns: repeat(2, 1fr);
@@ -1745,7 +1749,7 @@ input {
     grid-column: 1 / -1;
     justify-self: center;
   }
-
+ 
   /* YOUTUBE */
   .videos-title {
     font-size: var(--font-size-3xl);
@@ -1765,16 +1769,16 @@ input {
     width: 26px;
     height: 26px;
   }
-
+ 
   /* Placeholder sections tablet */
   .placeholder-section {
     padding: var(--spacing-3xl) var(--spacing-lg);
   }
-
+ 
   .placeholder-section__title {
     font-size: var(--font-size-2xl);
   }  
-
+ 
   /* ============================================= */
   /* Teams Grid - Tablet: 1 top, then 2 per row    */
   /* ============================================= */
@@ -1784,28 +1788,28 @@ input {
     gap: 1.5rem;
     max-width: 600px;
   }
-
+ 
   /* First card centered on its own row */
   .team-card:nth-child(1) {
     grid-column: 1 / -1;
     max-width: 280px;
     margin: 0 auto;
   }
-
+ 
   /* Rest of the cards flow naturally in 2 columns */
   .team-card:nth-child(n+2) {
     grid-area: auto;
   }
-
+ 
   .teams-title {
     font-size: var(--font-size-3xl);
   }
-
+ 
   .teams-desc {
     margin-bottom: var(--spacing-2xl);
   }
 }
-
+ 
 /* ============================================= */
 /* 9. RESPONSIVE - MOBILE (375px)               */
 /* ============================================= */
@@ -1912,7 +1916,7 @@ input {
     width: 2rem;
     height: 2rem;
   }
-
+ 
   .cards-wrapper {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1935,7 +1939,7 @@ input {
     height: var(--img-height, auto);
     max-height: 250px;
   }
-
+ 
   .videos-section {
     padding: var(--spacing-3xl) var(--spacing-lg);
   }
@@ -2017,7 +2021,7 @@ input {
     margin-bottom: var(--spacing-xl);
   }
 }
-
+ 
 /* ============================================= */
 /* 10. DESKTOP ONLY (1366px+)                    */
 /* ============================================= */
@@ -2025,7 +2029,7 @@ input {
   .navbar__inner {
     padding: 0 2.5rem;
   }
-
+ 
   .hero__content {
     padding: var(--spacing-4xl) var(--spacing-3xl);
   }
@@ -2042,7 +2046,7 @@ input {
     transform: rotate(180deg);
   }
 }
-
+ 
 /* ============================================= */
 /* ABOUT SECTION STYLES (BEM)                   */
 /* ============================================= */
@@ -2056,7 +2060,7 @@ input {
   background: var(--dark);
   overflow: hidden;
 }
-
+ 
 /* Background decorative shapes */
 .about-section__bg-shapes {
   position: absolute;
@@ -2064,14 +2068,14 @@ input {
   pointer-events: none;
   z-index: 0;
 }
-
+ 
 .about-section__shape {
   position: absolute;
   border-radius: 50%;
   filter: blur(5rem);
   opacity: 0.06;
 }
-
+ 
 .about-section__shape--1 {
   width: 28rem;
   height: 28rem;
@@ -2080,7 +2084,7 @@ input {
   left: -5%;
   animation: about-float 9s ease-in-out infinite;
 }
-
+ 
 .about-section__shape--2 {
   width: 22rem;
   height: 22rem;
@@ -2089,19 +2093,19 @@ input {
   right: -5%;
   animation: about-float 11s ease-in-out infinite reverse;
 }
-
+ 
 @keyframes about-float {
   0%, 100% { transform: translate(0, 0); }
   50% { transform: translate(1.5rem, -1.5rem); }
 }
-
+ 
 .about-section__container {
   position: relative;
   z-index: 1;
   width: 100%;
   max-width: 75rem;
 }
-
+ 
 /* Glassmorphism Card */
 .about-section__card {
   background: var(--glass-bg);
@@ -2117,7 +2121,7 @@ input {
   position: relative;
   overflow: hidden;
 }
-
+ 
 /* Top accent gradient line */
 .about-section__card::before {
   content: '';
@@ -2130,7 +2134,7 @@ input {
   background: linear-gradient(90deg, transparent, var(--primary), transparent);
   border-radius: 2px;
 }
-
+ 
 .about-section__icon {
   width: 3.5rem;
   height: 3.5rem;
@@ -2138,7 +2142,7 @@ input {
   color: var(--primary);
   opacity: 0.9;
 }
-
+ 
 .about-section__title {
   font-size: var(--font-size-3xl);
   font-weight: 700;
@@ -2146,12 +2150,12 @@ input {
   margin-bottom: var(--spacing-md);
   letter-spacing: -0.02em;
 }
-
+ 
 .about-section__title-accent {
   color: var(--primary);
   position: relative;
 }
-
+ 
 .about-section__theme-tag {
   display: block;
   width: fit-content;
@@ -2166,7 +2170,7 @@ input {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-
+ 
 .about-section__text {
   font-size: var(--font-size-lg);
   color: var(--white-70);
@@ -2176,7 +2180,7 @@ input {
   margin-left: auto;
   margin-right: auto;
 }
-
+ 
 /* Feature Highlights Grid */
 .about-section__features {
   display: grid;
@@ -2184,7 +2188,7 @@ input {
   gap: var(--spacing-lg);
   margin-top: var(--spacing-xl);
 }
-
+ 
 .about-section__feature {
   display: flex;
   flex-direction: column;
@@ -2197,25 +2201,25 @@ input {
   transition: var(--transition-base);
   cursor: pointer;
 }
-
+ 
 .about-section__feature:hover {
   background: rgba(148, 137, 121, 0.08);
   border-color: rgba(148, 137, 121, 0.3);
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
-
+ 
 .about-section__feature-icon {
   font-size: 1.5rem;
   line-height: 1;
 }
-
+ 
 .about-section__feature-text {
   font-size: var(--font-size-sm);
   color: var(--white-70);
   font-weight: 500;
 }
-
+ 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .about-section {
@@ -2236,13 +2240,13 @@ input {
     gap: var(--spacing-md);
   }
 }
-
-
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 /* === Wrapper: 3 Card Horizontal (Fixed) === */
 /* === Wrapper: Grid Layout === */
 .cards-wrapper {
@@ -2253,7 +2257,7 @@ input {
   margin: 0 auto;
   padding: 15px;
 }
-
+ 
 /* === Card Utama (macOS Style) === */
 .card {
   width: 100%;
@@ -2268,12 +2272,12 @@ input {
   align-items: center;
   justify-self: center; /* Center card dalam grid cell */
 }
-
+ 
 .card:hover {
   transform: translateY(-7px);
   box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
 }
-
+ 
 /* === Header & Tombol macOS === */
 .top {
   display: flex;
@@ -2282,20 +2286,20 @@ input {
   width: 100%;
   box-sizing: border-box;
 }
-
+ 
 .circle { padding: 0 4px; }
-
+ 
 .circle2 {
   display: inline-block;
   width: 10px;
   height: 10px;
   border-radius: 50%;
 }
-
+ 
 .red { background-color: #ff605c; }
 .yellow { background-color: #ffbd44; }
 .green { background-color: #00ca4e; }
-
+ 
 #title2 {
   color: white;
   padding-left: 20px;
@@ -2306,7 +2310,7 @@ input {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
+ 
 /* === Container & Foto === */
 .image-container {
   display: flex;
@@ -2317,7 +2321,7 @@ input {
   padding: 10px;
   box-sizing: border-box;
 }
-
+ 
 .photo {
   width: var(--img-width, 260px);
   height: var(--img-height, 280px);
@@ -2326,13 +2330,13 @@ input {
   border: 2px solid rgba(255,255,255,0.1);
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
-
+ 
 .photo:hover {
   transform: scale(1.03);
   border-color: rgba(255,255,255,0.4);
   cursor: pointer;
 }
-
+ 
 /* ============================================= */
 /* HERO BOTTOM GRADIENT TRANSITION               */
 /* ============================================= */
@@ -2350,7 +2354,7 @@ input {
   z-index: 2;
   pointer-events: none;
 }
-
+ 
 /* ============================================= */
 /* SECTION GRADIENT TRANSITIONS                  */
 /* ============================================= */
@@ -2362,7 +2366,7 @@ input {
   margin-bottom: -1px;
   z-index: 1;
 }
-
+ 
 /* About (--dark #222831) → Proposal (placeholder even = --secondary #393E46) */
 /* Actually proposal has dark bg, let's keep it consistent */
 .section-gradient--about-to-proposal {
@@ -2372,7 +2376,7 @@ input {
     var(--secondary) 100%
   );
 }
-
+ 
 /* Proposal (--secondary) → Banners (--dark, since even/odd alternates) */
 .section-gradient--proposal-to-banners {
   background: linear-gradient(
@@ -2381,7 +2385,7 @@ input {
     var(--dark) 100%
   );
 }
-
+ 
 /* Banners (--dark) → Videos (--dark) - same bg so just subtle */
 .section-gradient--banners-to-videos {
   background: linear-gradient(
@@ -2390,7 +2394,7 @@ input {
     var(--dark) 100%
   );
 }
-
+ 
 /* Videos (--dark) → Teams (--dark) */
 .section-gradient--videos-to-teams {
   background: linear-gradient(
@@ -2401,18 +2405,18 @@ input {
   );
   height: 60px;
 }
-
+ 
 /* ============================================= */
 /* PROPOSAL CARDS — NEW DESIGN                   */
 /* ============================================= */
 .proposal-section {
   background: var(--secondary) !important;
 }
-
+ 
 .proposal-container {
   max-width: 1100px !important;
 }
-
+ 
 .proposal-cards-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2420,7 +2424,7 @@ input {
   margin-top: 2.5rem;
   width: 100%;
 }
-
+ 
 .proposal-card {
   position: relative;
   display: flex;
@@ -2438,13 +2442,13 @@ input {
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   will-change: transform;
 }
-
+ 
 .proposal-card:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 20px 50px rgba(0,0,0,0.45), 0 0 25px rgba(148, 137, 121, 0.18);
   border-color: rgba(148, 137, 121, 0.4);
 }
-
+ 
 /* Glow effect */
 .proposal-card__glow {
   position: absolute;
@@ -2455,11 +2459,11 @@ input {
   pointer-events: none;
   z-index: 0;
 }
-
+ 
 .proposal-card:hover .proposal-card__glow {
   opacity: 1;
 }
-
+ 
 /* macOS header bar */
 .proposal-card__header {
   display: flex;
@@ -2471,13 +2475,13 @@ input {
   position: relative;
   z-index: 1;
 }
-
+ 
 .proposal-card__dots {
   display: flex;
   gap: 5px;
   align-items: center;
 }
-
+ 
 .dot {
   display: inline-block;
   width: 11px;
@@ -2485,11 +2489,11 @@ input {
   border-radius: 50%;
   flex-shrink: 0;
 }
-
+ 
 .dot--red    { background: #ff605c; }
 .dot--yellow { background: #ffbd44; }
 .dot--green  { background: #00ca4e; }
-
+ 
 .proposal-card__filename {
   font-family: monospace;
   font-size: 0.75rem;
@@ -2498,7 +2502,7 @@ input {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
+ 
 /* Image area */
 .proposal-card__img-wrap {
   position: relative;
@@ -2506,7 +2510,7 @@ input {
   flex: 1;
   aspect-ratio: 16/10;
 }
-
+ 
 .proposal-card__img {
   width: 100%;
   height: 100%;
@@ -2514,12 +2518,12 @@ input {
   display: block;
   transition: transform 0.5s ease, filter 0.5s ease;
 }
-
+ 
 .proposal-card:hover .proposal-card__img {
   transform: scale(1.06);
   filter: brightness(0.55);
 }
-
+ 
 /* Hover overlay on image */
 .proposal-card__overlay {
   position: absolute;
@@ -2536,17 +2540,17 @@ input {
   font-weight: 600;
   letter-spacing: 0.03em;
 }
-
+ 
 .proposal-card:hover .proposal-card__overlay {
   opacity: 1;
 }
-
+ 
 .proposal-card__link-icon {
   width: 2rem;
   height: 2rem;
   stroke: var(--primary);
 }
-
+ 
 /* Footer */
 .proposal-card__footer {
   display: flex;
@@ -2558,13 +2562,13 @@ input {
   position: relative;
   z-index: 1;
 }
-
+ 
 .proposal-card__label {
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--white-70);
 }
-
+ 
 .proposal-card__badge {
   font-size: 0.7rem;
   font-weight: 700;
@@ -2575,14 +2579,266 @@ input {
   padding: 2px 8px;
   letter-spacing: 0.05em;
 }
-
+ 
+/* ============================================= */
+/* DOC FAN GLASS CARDS — Proposal & Laporan      */
+/* ============================================= */
+ 
+/*
+ * ASPECT RATIO CONTROL — ubah di sini untuk menyesuaikan ukuran gambar cover
+ * Default: 3/4 (portrait, cocok untuk cover dokumen A4)
+ */
+ 
+/* Image wrap — shared base */
+.doc-glass-card__img-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  flex: 1;
+  aspect-ratio: 3/4;
+}
+ 
+.doc-glass-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+ 
+/* Hover overlay */
+.doc-glass-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  background: rgba(34,40,49,0.45);
+}
+ 
+.doc-glass-card__overlay svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  stroke: var(--primary);
+}
+ 
+/* Footer label */
+.doc-glass-card__footer {
+  padding: 0.6rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--white-70);
+  background: rgba(255,255,255,0.03);
+  border-top: 1px solid rgba(255,255,255,0.07);
+  text-align: center;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ 
+/* Hint text bawah fan */
+.doc-fan-hint {
+  margin-top: 1.5rem;
+  font-size: 0.78rem;
+  color: var(--white-30);
+  text-align: center;
+  letter-spacing: 0.03em;
+  transition: opacity 0.4s ease;
+}
+ 
+/* ============================================= */
+/* MOBILE (≤ 767px) — Stacked vertikal, no fan   */
+/* ============================================= */
+@media (max-width: 767px) {
+  .doc-fan-container {
+    /* Flex kolom normal, no absolute positioning trick */
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    cursor: default;
+  }
+ 
+  .doc-glass-card {
+    /* Reset ke normal flow */
+    position: static;
+    left: auto;
+    bottom: auto;
+    width: min(280px, 85vw);
+    display: flex;
+    flex-direction: column;
+    background: rgba(34, 40, 49, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--white);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+    transform: none !important;
+    filter: brightness(1) !important;
+    transition:
+      transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+      box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+      filter 0.4s ease;
+    will-change: transform;
+    z-index: 1 !important;
+  }
+ 
+  /* Tap/hover effect di mobile — scale kecil, tanpa translateX */
+  .doc-glass-card:hover,
+  .doc-glass-card:focus {
+    transform: translateY(-6px) scale(1.03) !important;
+    box-shadow:
+      0 6px 20px rgba(0, 0, 0, 0.6),
+      0 0 20px rgba(148, 137, 121, 0.25) !important;
+    filter: brightness(1.05) !important;
+  }
+ 
+  .doc-glass-card:hover .doc-glass-card__img,
+  .doc-glass-card:focus .doc-glass-card__img {
+    transform: scale(1.05);
+    filter: brightness(0.45);
+  }
+ 
+  .doc-glass-card:hover .doc-glass-card__overlay,
+  .doc-glass-card:focus .doc-glass-card__overlay {
+    opacity: 1;
+  }
+ 
+  /* Sembunyikan hint di mobile karena ga ada fan */
+  .doc-fan-hint {
+    display: none;
+  }
+}
+ 
+/* ============================================= */
+/* TABLET & DESKTOP (≥ 768px) — Fan + Spread     */
+/* ============================================= */
+@media (min-width: 768px) {
+ 
+  /*
+   * CONTAINER — tinggi fixed, semua card absolute
+   * Semua state dikontrol pure lewat transform saja → smooth tanpa reflow
+   */
+  .doc-fan-container {
+    position: relative;
+    display: block;       /* bukan flex, card pakai absolute */
+    width: 100%;
+    height: 460px;        /* card ~350px tinggi + ruang atas buat scale */
+    margin-top: 3rem;
+    cursor: pointer;
+  }
+ 
+  /* Base card — SELALU absolute, tidak pernah berubah positionnya */
+  .doc-glass-card {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    width: 240px;         /* sedikit lebih besar dari sebelumnya */
+    background: rgba(34, 40, 49, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--white);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+    transition:
+      transform 0.6s cubic-bezier(0.34, 1.4, 0.64, 1),
+      box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+      filter 0.5s ease;
+    transform-origin: bottom center;
+    will-change: transform;
+  }
+ 
+  /* ---- FAN STATE (default, collapsed) ---- */
+  .doc-glass-card--1 {
+    transform: translateX(calc(-50% - 45px)) rotate(-15deg);
+    z-index: 1;
+    filter: brightness(0.7);
+  }
+  .doc-glass-card--2 {
+    transform: translateX(calc(-50% + 0px)) rotate(5deg);
+    z-index: 2;
+    filter: brightness(0.82);
+  }
+  .doc-glass-card--3 {
+    transform: translateX(calc(-50% + 50px)) rotate(25deg);
+    z-index: 3;
+    filter: brightness(1);
+  }
+ 
+  /* ---- SPREAD STATE (is-spread) ---- */
+  /* gap 260px antar card — ubah jika mau lebih rapat/renggang */
+  .doc-fan-container.is-spread .doc-glass-card--1 {
+    transform: translateX(calc(-50% - 260px)) rotate(0deg);
+    z-index: 1;
+    filter: brightness(1);
+  }
+  .doc-fan-container.is-spread .doc-glass-card--2 {
+    transform: translateX(-50%) rotate(0deg);
+    z-index: 1;
+    filter: brightness(1);
+  }
+  .doc-fan-container.is-spread .doc-glass-card--3 {
+    transform: translateX(calc(-50% + 260px)) rotate(0deg);
+    z-index: 1;
+    filter: brightness(1);
+  }
+ 
+  /* Custom property untuk posisi X tiap card (dipakai saat hover) */
+  .doc-fan-container.is-spread .doc-glass-card--1 { --tx: -260px; }
+  .doc-fan-container.is-spread .doc-glass-card--2 { --tx: 0px; }
+  .doc-fan-container.is-spread .doc-glass-card--3 { --tx: 260px; }
+ 
+  /* ---- HOVER PER-CARD saat sudah spread — scale 1.07 ---- */
+  .doc-fan-container.is-spread .doc-glass-card:hover {
+    transform: translateX(calc(-50% + var(--tx, 0px))) translateY(-10px) scale(1.07) !important;
+    z-index: 10;
+    filter: brightness(1.06) !important;
+    box-shadow:
+      0 6px 16px rgba(0, 0, 0, 0.65),
+      0 20px 56px rgba(0, 0, 0, 0.55),
+      0 0 28px rgba(148, 137, 121, 0.28) !important;
+  }
+ 
+  .doc-fan-container.is-spread .doc-glass-card:hover .doc-glass-card__img {
+    transform: scale(1.05);
+    filter: brightness(0.45);
+  }
+ 
+  .doc-fan-container.is-spread .doc-glass-card:hover .doc-glass-card__overlay {
+    opacity: 1;
+  }
+ 
+  /* Hint text */
+  .doc-fan-container.is-spread ~ .doc-fan-hint {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+ 
 /* ============================================= */
 /* BANNER CARDS (2 per row)                      */
 /* ============================================= */
 .banners-section {
   background: var(--dark) !important;
 }
-
+ 
 .banner-cards-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -2593,11 +2849,11 @@ input {
   margin-left: auto;
   margin-right: auto;
 }
-
+ 
 .banner-card .proposal-card__img-wrap {
-  aspect-ratio: 16/9;
+  aspect-ratio: 2/3;
 }
-
+ 
 /* ============================================= */
 /* VIDEO SECTION — Different background          */
 /* ============================================= */
@@ -2622,7 +2878,7 @@ input {
   background: linear-gradient(90deg, transparent, rgba(148,137,121,0.3), transparent);
   pointer-events: none;
 }
-
+ 
 /* ============================================= */
 /* PROPOSAL / BANNER RESPONSIVE                  */
 /* ============================================= */
@@ -2636,7 +2892,7 @@ input {
     margin: 0 auto;
   }
 }
-
+ 
 @media (max-width: 640px) {
   .proposal-cards-wrapper {
     grid-template-columns: 1fr;
@@ -2656,33 +2912,33 @@ input {
     height: 60px;
   }
 }
-
+ 
 @media (max-width: 768px) {
   .banner-cards-wrapper {
     max-width: 100%;
   }
 }
-
+ 
 /* ============================================= */
 /* SUPER RESPONSIVE — MOBILE OVERHAUL            */
 /* Fixes semua section biar rapi di HP           */
 /* ============================================= */
-
+ 
 /* --- GLOBAL MOBILE BASE (max 768px) --- */
 @media (max-width: 768px) {
-
+ 
   /* Fix hero: full cover, content centered */
   .hero {
     min-height: 100svh;
     align-items: flex-end;
     padding-bottom: 5rem;
   }
-
+ 
   .hero__bg-image {
     object-fit: cover !important;
     object-position: center 40% !important;
   }
-
+ 
   .hero__content {
     width: 100%;
     padding: var(--spacing-xl) var(--spacing-lg) !important;
@@ -2690,15 +2946,15 @@ input {
     align-items: center;
     text-align: center;
   }
-
+ 
   .hero__title-line {
     font-size: 1.6rem !important;
   }
-
+ 
   .hero__title-highlight {
     font-size: 2.2rem !important;
   }
-
+ 
   .hero__actions {
     margin-top: 2rem !important;
     flex-direction: row !important;
@@ -2706,141 +2962,141 @@ input {
     justify-content: center;
     gap: 0.75rem !important;
   }
-
+ 
   .btn {
     width: auto !important;
     max-width: none !important;
     padding: 0.75rem 1.75rem !important;
     font-size: 0.9rem !important;
   }
-
+ 
   .hero__bottom-gradient {
     height: 160px;
   }
-
+ 
   /* Navbar spacer hide on mobile — causes weird dead zone */
   .navbar__spacer {
     display: none !important;
   }
-
+ 
   /* About section */
   .about-section {
     padding: var(--spacing-3xl) var(--spacing-md);
     min-height: auto;
   }
-
+ 
   .about-section__card {
     padding: var(--spacing-xl) var(--spacing-md);
     border-radius: var(--radius-lg);
   }
-
+ 
   .about-section__title {
     font-size: 1.6rem;
   }
-
+ 
   .about-section__text {
     font-size: 0.9rem;
     line-height: 1.75;
   }
-
+ 
   .about-section__features {
     grid-template-columns: 1fr;
     gap: 0.75rem;
   }
-
+ 
   /* Proposal & Banner sections */
   .placeholder-section {
     padding: var(--spacing-2xl) var(--spacing-md) !important;
     min-height: auto !important;
   }
-
+ 
   .proposal-container {
     max-width: 100% !important;
     padding: 0 !important;
   }
-
+ 
   .proposal-cards-wrapper {
     grid-template-columns: 1fr !important;
     gap: 1rem;
     margin-top: 1.5rem;
   }
-
+ 
   .proposal-card:nth-child(3) {
     grid-column: auto !important;
     max-width: 100% !important;
     margin: 0 !important;
   }
-
+ 
   .banner-cards-wrapper {
     grid-template-columns: 1fr !important;
     gap: 1rem;
     max-width: 100% !important;
     margin-top: 1.5rem;
   }
-
+ 
   .proposal-card__img-wrap {
     aspect-ratio: 16/9;
   }
-
+ 
   /* Videos section */
   .videos-section {
     padding: var(--spacing-2xl) var(--spacing-md) !important;
   }
-
+ 
   .videos-container {
     max-width: 100%;
     padding: 0;
   }
-
+ 
   .videos-title {
     font-size: 1.75rem !important;
   }
-
+ 
   .videos-desc {
     font-size: 0.9rem !important;
     margin-bottom: var(--spacing-xl) !important;
     line-height: 1.6;
   }
-
+ 
   .video-thumbnail-wrapper {
     border-radius: var(--radius-lg);
   }
-
+ 
   .video-play-button {
     width: 56px !important;
     height: 56px !important;
   }
-
+ 
   .play-icon {
     width: 22px !important;
     height: 22px !important;
   }
-
+ 
   .button-yt {
     padding: 0.6rem 1.4rem !important;
     font-size: 0.875rem !important;
     margin-top: var(--spacing-md);
   }
-
+ 
   /* Teams section */
   .teams-section {
     padding: var(--spacing-2xl) var(--spacing-md) !important;
     min-height: auto !important;
   }
-
+ 
   .teams-container {
     max-width: 100%;
   }
-
+ 
   .teams-title {
     font-size: 1.75rem !important;
   }
-
+ 
   .teams-desc {
     font-size: 0.875rem;
     margin-bottom: var(--spacing-xl) !important;
   }
-
+ 
   /* Team grid: reset all explicit grid-area, go 2 col */
   .team-grid {
     display: grid !important;
@@ -2849,7 +3105,7 @@ input {
     gap: 1rem !important;
     max-width: 100% !important;
   }
-
+ 
   /* Reset all grid-area overrides */
   .team-card:nth-child(1),
   .team-card:nth-child(2),
@@ -2863,16 +3119,16 @@ input {
     max-width: 100% !important;
     margin: 0 !important;
   }
-
+ 
   .team-card {
     aspect-ratio: 3/4;
     border-radius: var(--radius-lg);
   }
-
+ 
   .team-name {
     font-size: 0.9rem !important;
   }
-
+ 
   .team-nim {
     font-size: 0.7rem !important;
   }
@@ -2880,45 +3136,45 @@ input {
   .documentation-section {
     padding: 40px 16px !important;
   }
-
+ 
   .documentation-gallery {
     flex-direction: column;
     align-items: center;
     gap: 16px;
   }
-
+ 
   .documentation-item {
     width: 100% !important;
     max-width: 380px;
     height: auto !important;
     aspect-ratio: 4/3;
   }
-
+ 
   .documentation-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-
+ 
   .documentation-title {
     font-size: 1.75rem !important;
   }
-
+ 
   /* Footer */
   .footer__inner {
     flex-direction: column !important;
     gap: 1.5rem;
     padding: 2rem 1.25rem !important;
   }
-
+ 
   .footer__brand {
     max-width: 100%;
   }
-
+ 
   .footer__column {
     min-width: 0 !important;
   }
-
+ 
   /* Section gradients smaller on mobile */
   .section-gradient-transition {
     height: 50px !important;
@@ -2927,29 +3183,29 @@ input {
     height: 40px !important;
   }
 }
-
+ 
 /* --- SMALL PHONE (max 420px) --- */
 @media (max-width: 420px) {
-
+ 
   .hero__title-line {
     font-size: 1.35rem !important;
   }
-
+ 
   .hero__title-highlight {
     font-size: 1.85rem !important;
   }
-
+ 
   .hero__actions {
     flex-direction: column !important;
     align-items: center;
   }
-
+ 
   .btn {
     width: 100% !important;
     max-width: 220px !important;
     text-align: center;
   }
-
+ 
   /* 1 column teams on very small phones */
   .team-grid {
     grid-template-columns: 1fr !important;
@@ -2959,16 +3215,16 @@ input {
 .videos-title {
     font-size: 1.4rem !important;
   }
-
+ 
   .placeholder-section__title {
     font-size: 1.4rem !important;
   }
-
+ 
   .documentation-item {
     max-width: 100%;
   }
 }
-
+ 
 /* --- BANNERS → VIDEOS gradient (update to match new video bg) --- */
 .section-gradient--banners-to-videos {
   background: linear-gradient(
@@ -2977,18 +3233,18 @@ input {
     #2a2535 100%
   ) !important;
 }
-
+ 
 /* IG button: dont expand past card width on mobile */
 @media (max-width: 768px) {
   .ig-button:hover {
     width: 160px;
   }
-
+ 
   .team-card:hover .team-photo {
     filter: brightness(0.5) blur(1px);
   }
 }
-
+ 
 /* ============================================= */
 /* FOOTER MOBILE RESPONSIVE FIX                  */
 /* ============================================= */
@@ -2996,46 +3252,46 @@ input {
   .footer {
     padding: 2rem 0 1rem;
   }
-
+ 
   .footer__inner {
     display: flex !important;
     flex-direction: column !important;
     gap: 1.75rem !important;
     padding: 0 1.25rem !important;
   }
-
+ 
   .footer__brand {
     min-width: 0 !important;
   }
-
+ 
   .footer__logo {
     font-size: 1rem;
   }
-
+ 
   .footer__logo-image {
     width: 36px;
     height: 36px;
   }
-
+ 
   .footer__logo-image2 {
     width: 60px;
     height: 36px;
   }
-
+ 
   .footer__text {
     font-size: 0.85rem;
     line-height: 1.7;
   }
-
+ 
   .footer__column-title {
     font-size: 1rem;
   }
-
+ 
   .footer__link,
   .footer__contact-text {
     font-size: 0.875rem;
   }
-
+ 
   /* Stack footer columns in a 2-col grid on tablet */
   .footer__pages,
   .footer__information,
@@ -3044,69 +3300,73 @@ input {
     flex-direction: column;
     gap: 0.5rem;
   }
-
+ 
   .footer__bottom {
     padding: 1rem 1.25rem;
     font-size: 0.8rem;
     margin-top: 1.5rem;
   }
 }
-
+ 
 @media (max-width: 480px) {
   /* Documentation section tighter on phone */
   .documentation-section {
     padding: 32px 14px !important;
   }
-
+ 
   .documentation-gallery {
     gap: 12px;
   }
-
+ 
   .documentation-item {
     border-radius: 8px;
   }
-
+  
+  .mrgn-doc {
+      margin-top: 1rem;
+  }
+ 
   /* About feature boxes stack */
   .about-section__feature-detail {
     font-size: 0.8rem;
   }
-
+ 
   .about-section__feature-icon {
     font-size: 1.25rem;
   }
-
+ 
   /* Video embed responsive */
   .video-embed-wrapper {
     border-radius: var(--radius-md) !important;
   }
-
+ 
   /* Proposal cards smaller padding */
   .proposal-card__footer {
     padding: 0.6rem 0.75rem;
   }
-
+ 
   .proposal-card__label {
     font-size: 0.78rem;
   }
-
+ 
   .proposal-card__badge {
     font-size: 0.65rem;
     padding: 2px 6px;
   }
-
+ 
   .proposal-card__header {
     padding: 0.5rem 0.75rem;
   }
-
+ 
   .placeholder-section__title {
     font-size: 1.35rem !important;
   }
-
+ 
   .placeholder-section__text {
     font-size: 0.85rem;
   }
 }
-
+ 
 /* ============================================= */
 /* VIDEO SECTION — Themed gradient transition    */
 /* ============================================= */
@@ -3123,7 +3383,7 @@ input {
   /* ============================================= */
   /* KHUSUS CURSOR                                 */
   /* ============================================= */
-
+ 
   /* Hide cursor on touch devices */
   @media (hover: none) {
     body {
@@ -3134,7 +3394,7 @@ input {
       display: none !important;
     }
   }
-
+ 
   /* ===== CUSTOM CURSOR ===== */
   /* Outer ring (trail) */
   .cursor-ring {
@@ -3152,7 +3412,7 @@ input {
     opacity: 0.8;
     mix-blend-mode: difference;
   }
-
+ 
   /* Inner dot (main cursor) */
   .cursor-dot {
     position: fixed;
@@ -3167,7 +3427,7 @@ input {
     transform: translate(-50%, -50%);
     transition: width 0.2s, height 0.2s, background 0.2s;
   }
-
+ 
   /* Hover effect on interactive elements */
   body.hovering .cursor-ring {
     width: 60px;
@@ -3176,13 +3436,13 @@ input {
     opacity: 1;
     background: rgba(148, 137, 121, 0.1);
   }
-
+ 
   body.hovering .cursor-dot {
     width: 12px;
     height: 12px;
     background: var(--cursor-hover-color, var(--primary, #948979));
   }
-
+ 
   /* Click effect */
   body.clicking .cursor-ring {
     width: 30px;
@@ -3190,13 +3450,13 @@ input {
     border-width: 3px;
     opacity: 1;
   }
-
+ 
   body.clicking .cursor-dot {
     width: 4px;
     height: 4px;
     opacity: 0.5;
   }
-
+ 
   /* Trail particles */
   .cursor-trail {
     position: fixed;
@@ -3210,7 +3470,7 @@ input {
     transform: translate(-50%, -50%);
     animation: trail-fade 0.6s ease-out forwards;
   }
-
+ 
   @keyframes trail-fade {
     0% {
       opacity: 0.8;
@@ -3221,7 +3481,7 @@ input {
       transform: translate(-50%, -50%) scale(0.3);
     }
   }
-
+ 
   /* ===== DEMO CONTENT ===== */
   .demo-container {
     max-width: 1200px;
@@ -3232,21 +3492,21 @@ input {
     align-items: center;
     gap: 2rem;
   }
-
+ 
   .demo-title {
     font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
     margin-bottom: 1rem;
   }
-
+ 
   .demo-subtitle {
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
     max-width: 600px;
     margin-bottom: 3rem;
   }
-
+ 
   /* Interactive elements for demo */
   .demo-btn {
     padding: 1rem 2.5rem;
@@ -3259,12 +3519,12 @@ input {
     cursor: none; /* Important! */
     transition: transform 0.2s, box-shadow 0.2s;
   }
-
+ 
   .demo-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(148, 137, 121, 0.4);
   }
-
+ 
   .demo-link {
     color: var(--primary, #948979);
     text-decoration: none;
@@ -3273,11 +3533,11 @@ input {
     border-bottom: 2px solid transparent;
     transition: border-color 0.2s;
   }
-
+ 
   .demo-link:hover {
     border-bottom-color: var(--primary, #948979);
   }
-
+ 
   .demo-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -3288,12 +3548,12 @@ input {
     cursor: none; /* Important! */
     transition: transform 0.3s, border-color 0.3s;
   }
-
+ 
   .demo-card:hover {
     transform: translateY(-5px);
     border-color: var(--primary, #948979);
   }
-
+ 
   .demo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -3301,7 +3561,7 @@ input {
     width: 100%;
     max-width: 900px;
   }
-
+ 
   /* Helper text */
   .cursor-hint {
     position: fixed;
