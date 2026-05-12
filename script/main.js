@@ -975,3 +975,35 @@ initCustomCursor();
 /* ============================================= */
 console.log('%c Kelompok 2 — Pengabdian Masyarakat ', 'background:#948979;color:#222831;font-size:14px;font-weight:bold;padding:8px 16px;border-radius:4px;');
 console.log('✨ Animation System v2.0 loaded');
+/* ============================================= */
+/* 22. THEME TOGGLE — Dark / Light Mode         */
+/* FIX: unchecked = dark/malam, checked = light/siang */
+/* ============================================= */
+(function initThemeToggle() {
+  const checkbox    = document.getElementById('theme-checkbox');
+  const body        = document.body;
+  const STORAGE_KEY = 'kelompok2-theme';
+
+  // unchecked → dark mode (default, malam)
+  // checked   → light mode (siang)
+  function applyTheme(isLight) {
+    if (isLight) {
+      body.classList.add('light-mode');
+      if (checkbox) checkbox.checked = true;
+    } else {
+      body.classList.remove('light-mode');
+      if (checkbox) checkbox.checked = false;
+    }
+  }
+
+  // Load saved preference — default dark
+  const saved = localStorage.getItem(STORAGE_KEY);
+  applyTheme(saved === 'light');
+
+  // Listen toggle
+  checkbox?.addEventListener('change', () => {
+    const isLight = checkbox.checked;
+    applyTheme(isLight);
+    localStorage.setItem(STORAGE_KEY, isLight ? 'light' : 'dark');
+  });
+})();
