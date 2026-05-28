@@ -971,7 +971,97 @@ initCustomCursor();
 })();
 
 /* ============================================= */
-/* 21. CONSOLE WELCOME                           */
+/* 21. TEAM CARDS — DOM Render                   */
+/* ============================================= */
+(function initTeamCards() {
+  const members = [
+    {
+      name : 'Aditya Romadhoni',
+      nim  : '15250261',
+      photo: '/src/card-1.jpeg',
+      ig   : 'https://instagram.com/Don1ee',
+      igUser: '@Don1ee',
+    },
+    {
+      name : 'Syukron Raffiansyah',
+      nim  : '15250408',
+      photo: '/src/card-2.jpeg',
+      ig   : 'https://instagram.com/sykrn_rffii',
+      igUser: '@sykrn_rffii',
+    },
+    {
+      name : 'Yasmine Sheilana Syahida',
+      nim  : '15250571',
+      photo: '/src/card-7.jpeg',
+      ig   : 'https://instagram.com/yasminehlna',
+      igUser: '@yasminehlna',
+    },
+    {
+      name : "Sayyid Ja'far Shodiq",
+      nim  : '15250510',
+      photo: '/src/card-4.jpeg',
+      ig   : 'https://instagram.com/sayidjafarrr',
+      igUser: '@sayidjafarrr',
+    },
+    {
+      name : 'Ahmad Ridho Aryaguna',
+      nim  : '15250610',
+      photo: '/src/card-3.jpeg',
+      ig   : 'https://instagram.com/ridhooo747_',
+      igUser: '@ridhooo747_',
+    },
+    {
+      name : 'Lulu Cahya Pertiwi',
+      nim  : '15250887',
+      photo: '/src/card-6.jpeg',
+      ig   : 'https://instagram.com/alaamalazgue',
+      igUser: '@alaamalazgue',
+    },
+    {
+      name : 'Ridho Fakhar Septian',
+      nim  : '15250446',
+      photo: '/src/card-5.jpeg',
+      ig   : 'https://instagram.com/ridho_f_s_',
+      igUser: '@ridho_f_s_',
+    },
+  ];
+
+  // SVG Instagram icon — didefinisikan satu kali, di-reuse tiap card
+  const igSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+  </svg>`;
+
+  const grid = document.getElementById('team-grid');
+  if (!grid) return;
+
+  members.forEach(({ name, nim, photo, ig, igUser }) => {
+    const card = document.createElement('div');
+    card.className = 'team-card';
+    card.innerHTML = `
+      <img src="${photo}" alt="${name}" class="team-photo">
+      <div class="team-overlay">
+        <div class="team-info-container">
+          <h3 class="team-name">${name}</h3>
+          <span class="team-nim">NIM: ${nim}</span>
+        </div>
+        <div class="team-ig-wrapper">
+          <button class="ig-button" data-ig-link="${ig}">
+            <div class="icon-wrapper">${igSVG}</div>
+            <div class="separator"></div>
+            <span class="username">${igUser}</span>
+          </button>
+        </div>
+      </div>`;
+
+    // Ripple — addEventListener, bukan inline onclick
+    card.querySelector('.ig-button').addEventListener('click', createRipple);
+
+    grid.appendChild(card);
+  });
+})();
+
+/* ============================================= */
+/* 22. CONSOLE WELCOME                           */
 /* ============================================= */
 console.log('%c Kelompok 2 — Pengabdian Masyarakat ', 'background:#948979;color:#222831;font-size:14px;font-weight:bold;padding:8px 16px;border-radius:4px;');
 console.log('✨ Animation System v2.0 loaded');
