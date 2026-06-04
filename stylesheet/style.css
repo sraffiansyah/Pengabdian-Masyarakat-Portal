@@ -2886,15 +2886,6 @@ input {
   aspect-ratio: 2/3;
 }
 
-/*
- * PPT CARDS — landscape 16:9
- * Lebar mengikuti wrapper (900px max), dibagi 2 sama rata kayak banner-poster.
- * aspect-ratio override .banner-card .proposal-card__img-wrap di atas.
- */
-.ppt-cards-wrapper {
-  /* Wrapper sendiri — lebar & gap identik dengan banner-cards-wrapper */
-}
-
 .ppt-card .proposal-card__img-wrap {
   /* Override aspect-ratio dari .banner-card → landscape 16:9 */
   aspect-ratio: 16 / 9;
